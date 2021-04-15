@@ -12,5 +12,8 @@ obj_dir/Vwalker__ALL.a: obj_dir/Vwalker.cpp
 walker: walker.cpp obj_dir/Vwalker__ALL.a
 	g++ -I${VINC} -I obj_dir/ ${VINC}/verilated.cpp ${VINC}/verilated_vcd_c.cpp  walker.cpp obj_dir/Vwalker__ALL.a -o walker
 
+symbiyosys:
+	sby -f walker.sby
+
 clean:
-	rm -rf obj_dir walkertrace.vcd walker
+	rm -rf obj_dir walkertrace.vcd walker walker/

@@ -21,4 +21,7 @@ module walker (
         right = 1'b1;
     end
 
+    always @ (posedge clk)
+        assert($onehot(led));
+
 endmodule
